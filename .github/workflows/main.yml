@@ -24,7 +24,7 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           APP_DIR: ${{ secrets.APP_DIR }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          PWD_SUDO: ${{ secrets.PWS_SUDO }}
+          PWD_SUDO: ${{ secrets.PWD_SUDO }}
         run: |
           sshpass -p $PWD_SUDO ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "
           cd $APP_DIR &&
