@@ -25,6 +25,7 @@ jobs:
           APP_DIR: ${{ secrets.APP_DIR }}
         run: |
           ssh -o StrictHostKeyChecking=no -i /home/zoeon/.ssh/id_rsa $SERVER_USER@$SERVER_IP "
+          chmod 600 /home/zoeon/.ssh/id_rsa
           cd $APP_DIR &&
           git remote set-url origin git@github.com:Duplexificate/korutama.git
           git pull origin main &&
