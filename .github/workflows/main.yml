@@ -24,7 +24,7 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           APP_DIR: ${{ secrets.APP_DIR }}
         run: |
-          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP:$PORT "
+          ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP:345 "
           cd $APP_DIR &&
           git fetch origin main &&
           git reset --hard origin/main &&
