@@ -27,8 +27,8 @@ jobs:
         run: |
           sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "
           cd $APP_DIR &&
-          echo $PASSWORD | sudo git remote set-url origin git@github.com:Duplexificate/korutama.git
-          echo $PASSWORD | sudo git pull origin main &&
-          echo $PASSWORD | sudo npm install &&
-          echo $PASSWORD | sudo npm run build
+          echo $PASSWORD | sudo -S git remote set-url origin git@github.com:Duplexificate/korutama.git
+          git pull origin main &&
+          npm install &&
+          npm run build
           "
